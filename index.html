@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Game</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Author: Rodrigo Wong Mac #000887648 -->
+</head>
+
+<body>
+    <header class="text-center">
+        <h1>A4 - SVG and JavaScript</h1>
+    </header>
+    <div id="game" class="d-flex justify-content-center text-center w-100">
+        <div id="game_window" class="w-75 text-center">
+            <svg id="canvas" viewBox="0 0 1100 700" preserveAspectRatio="none" width="100%" height="100%" style="background-color:lightgray ; border:2px solid black">
+                <g id="tank">
+                    <g id="tank_body">
+                        <rect id="body" width="90" height="90" x="505" y="305" fill="green" stroke-width="4"
+                            stroke="darkgreen"></rect>
+                        <rect class="wheels" width="100" height="10" x="500" y="295" fill="gray" stroke-width="4"
+                            stroke="black"></rect>
+                        <rect class="wheels" width="100" height="10" x="500" y="395" fill="gray" stroke-width="4"
+                            stroke="black"></rect>
+                    </g>
+                    <g id="tank_cannon">
+                        <polygon id="cannon" points="525,325 575,325 575,342 620,342 620,358 575,358 575,375 525,375"
+                            fill="green" stroke-width="4" stroke="darkgreen"></polygon>
+                        <circle id="top" cx="550" cy="350" r="15" fill="darkgreen"></circle>
+                    </g>
+                </g>
+                <text x="505" y="35" id="points" font-size="20" font-weight="800">Points: 0 </text>
+        </svg>
+        </div>
+        <div id="overlay" class="position-fixed top-0 start-0 w-100 h-100 z-2 bg-primary-subtle opacity-50"></div>
+        <div id="overlay-menu" class="position-fixed text-center pt-5 z-3">
+            <div id="start" class="d-block ">
+                <button id="start-btn" class="btn btn-lg btn-success">START</button>
+            </div>
+            <div id="color" class="d-block fs-5 w-100   ">
+                <label for="tank-color">Choose your tank color: </label>
+                <select id="tank-color">
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="pink">Pink</option>
+                </select>
+            </div>
+            <div id="instructions" class="d-block mt-3">
+                <p class="fs-5"><strong>INSTRUCTIONS:</strong><br><strong>W-A-S-D</strong> to move the
+                    tank<br><strong>&larr; and &rarr;</strong> to rotate tank's cannon<br><strong>SPACEBAR</strong> to
+                    shoot</p>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-3">
+        <p>&copy; 2023, Rodrigo Wong, Mohawk College</p>
+    </footer>
+</body>
+
+</html>
