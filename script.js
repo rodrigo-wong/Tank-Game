@@ -287,13 +287,30 @@ function collision_tank() {
         game_over.setAttribute("id", "game_over");
         canvas.appendChild(game_over);
         document.querySelector("#game_over").textContent = "Game Over";
-        console.log("Game Over")
+        console.log("Game Over");
         clearInterval(check_collision);
         game = false;
+
+        // Create a restart button
+        let restartButton = document.createElement("button");
+        restartButton.textContent = "Restart";
+        restartButton.setAttribute("id", "restartButton");
+        restartButton.classList.add("btn", "btn-success", "btn-lg"); // Add Bootstrap classes
+        restartButton.style.position = "absolute";
+        restartButton.style.left = "50%";
+        restartButton.style.top = "50%";
+        restartButton.style.transform = "translate(-50%, -50%)";
+        document.body.appendChild(restartButton);
+
+        // Add event listener to restart button
+        restartButton.addEventListener("click", () => {
+          document.location.reload(); // Reload the page to restart the game
+        });
       }
     })
   }, 17)
 }
+
 
 // Update points
 function update_points() {
